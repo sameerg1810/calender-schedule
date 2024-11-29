@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <link rel="stylesheet" href="calender.css">
+</head>
+
+<body>
+    <form class="schedule-form" id="scheduleForm" method="POST">
+        <!-- Service Selection -->
+        <h1>Client proposed new Calender</h1>
+        <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service" name="serviceId" required>
+                <option value="" disabled selected>Select a Service</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="electrician">Electrician</option>
+            </select>
+        </div>
+
+        <!-- Recurring Toggle -->
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="recurring" name="recurring" />
+                Recurring Schedule
+            </label>
+        </div>
+
+        <!-- Weekly Calendar -->
+        <div class="form-group">
+            <h3>Weekly Schedule</h3>
+            <div class="calendar-container">
+                <!-- Each Day -->
+                <div class="calendar-day" id="Monday">
+                    <h4>Monday</h4>
+                    <label for="MondayDuration">Slot Duration (in hours)</label>
+                    <select id="MondayDuration" class="hour-duration" onchange="generateDaySlots('Monday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="MondaySlots" class="slot-list"></ul>
+                </div>
+                <div class="calendar-day" id="Tuesday">
+                    <h4>Tuesday</h4>
+                    <label for="TuesdayDuration">Slot Duration (in hours)</label>
+                    <select id="TuesdayDuration" class="hour-duration" onchange="generateDaySlots('Tuesday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="TuesdaySlots" class="slot-list"></ul>
+                </div>
+                <div class="calendar-day" id="Wednesday">
+                    <h4>Wednesday</h4>
+                    <label for="WednesdayDuration">Slot Duration (in hours)</label>
+                    <select id="WednesdayDuration" class="hour-duration" onchange="generateDaySlots('Wednesday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="WednesdaySlots" class="slot-list"></ul>
+                </div>
+                <div class="calendar-day" id="Thursday">
+                    <h4>Thursday</h4>
+                    <label for="ThursdayDuration">Slot Duration (in hours)</label>
+                    <select id="ThursdayDuration" class="hour-duration" onchange="generateDaySlots('Thursday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="ThursdaySlots" class="slot-list"></ul>
+                </div>
+                <div class="calendar-day" id="Friday">
+                    <h4>Friday</h4>
+                    <label for="FridayDuration">Slot Duration (in hours)</label>
+                    <select id="FridayDuration" class="hour-duration" onchange="generateDaySlots('Friday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="FridaySlots" class="slot-list"></ul>
+                </div>
+                <div class="calendar-day" id="Saturday">
+                    <h4>Saturday</h4>
+                    <label for="SaturdayDuration">Slot Duration (in hours)</label>
+                    <select id="SaturdayDuration" class="hour-duration" onchange="generateDaySlots('Saturday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="SaturdaySlots" class="slot-list"></ul>
+                </div>
+                <div class="calendar-day" id="Sunday">
+                    <h4>Sunday</h4>
+                    <label for="SundayDuration">Slot Duration (in hours)</label>
+                    <select id="SundayDuration" class="hour-duration" onchange="generateDaySlots('Sunday')">
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                    </select>
+                    <ul id="SundaySlots" class="slot-list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Public Holidays -->
+        <div class="form-group">
+            <h3>Public Holidays (Exceptions)</h3>
+            <div id="holidayCalendar" class="holiday-container"></div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit">Save Schedule</button>
+        </div>
+    </form>
+
+    <script src="calender.js"></script>
+</body>
+
+</html>

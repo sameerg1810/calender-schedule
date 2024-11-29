@@ -1,0 +1,150 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f4e9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.schedule-form {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h3 {
+    margin: 0 0 20px;
+    color: #4a7a94;
+}
+
+h4 {
+    margin: 0 0 10px;
+    color: #6b8e23;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Inputs and Selects */
+input[type="text"],
+input[type="time"],
+input[type="date"],
+select,
+button {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    background-color: #4a7a94;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a6173;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Calendar Container */
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.calendar-day {
+    flex: 1 1 calc(33.33% - 20px);
+    background: #f5f9f9;
+    padding: 15px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+.calendar-day h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #f1f4ff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.slot-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.slot-list li {
+    background-color: #eff9e6;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #bcd1c1;
+    border-radius: 4px;
+}
+
+/* Highlight for Public Holidays */
+.slot-list li[style*="red"] {
+    background-color: #fde8e8;
+    color: #d9534f;
+    font-weight: bold;
+    border: 1px solid #f5c6cb;
+}
+
+/* Public Holiday Section */
+.calendar-holidays {
+    padding: 10px;
+    background-color: #fcf5d8;
+    border: 1px solid #f8e1a4;
+    border-radius: 6px;
+}
+
+.calendar-holidays div {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+/* Submit Button */
+.form-group button[type="submit"] {
+    background-color: #5cb85c;
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+
+    .calendar-day {
+        flex: 1 1 100%;
+    }
+}
